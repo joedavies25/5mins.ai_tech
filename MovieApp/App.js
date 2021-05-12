@@ -1,11 +1,12 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, SafeAreaView } from 'react-native';
+import { API_KEY } from '@env';
 
 const App = () => {
   return (
-    <View>
-      <Text>Hello World</Text>
-    </View>
+    <SafeAreaView>
+      <Text>{API_KEY}</Text>
+    </SafeAreaView>
   );
 };
 
