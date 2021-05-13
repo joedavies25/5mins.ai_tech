@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import MovieItem from './movieItem';
 
-const MovieList = ({ discover }) => {
+const MovieList = ({ discover, navigation }) => {
   return (
     <View style={styles.container}>
       <FlatList
@@ -11,7 +11,7 @@ const MovieList = ({ discover }) => {
         renderItem={({ item }) => {
           return (
             <View>
-              <MovieItem movie={item} />
+              <MovieItem movie={item} navigation={navigation} />
             </View>
           );
         }}
@@ -23,7 +23,7 @@ const MovieList = ({ discover }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 8,
+    flex: 10,
     backgroundColor: '#18191A',
   },
   list: {

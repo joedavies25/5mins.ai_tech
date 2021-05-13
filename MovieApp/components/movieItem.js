@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
 import { IMG_URL } from '@env';
 
-const MovieItem = ({ movie }) => {
+const MovieItem = ({ movie, navigation }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.contentContainer}>
+      <Pressable
+        style={styles.contentContainer}
+        onPress={() => navigation.navigate('Info')}>
         <Image
           style={styles.image}
           source={{ uri: `${IMG_URL}${movie.poster_path}` }}
@@ -25,7 +27,7 @@ const MovieItem = ({ movie }) => {
             {movie.overview.slice(0, 100) + '...'}
           </Text>
         </View>
-      </View>
+      </Pressable>
       {/* <View style={styles.divider} /> */}
     </View>
   );
@@ -50,13 +52,14 @@ const styles = StyleSheet.create({
   },
   content: {
     justifyContent: 'space-around',
+    paddingLeft: 8,
     padding: 5,
     width: '75%',
   },
   title: {
     fontSize: 18,
     fontWeight: 'bold',
-    maxWidth: '96%',
+    maxWidth: '97%',
     maxHeight: 24,
     color: 'white',
   },

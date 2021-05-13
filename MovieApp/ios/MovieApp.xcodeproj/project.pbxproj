@@ -11,7 +11,6 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		69912BC4264C80B400950A90 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69912BC3264C80B300950A90 /* Fontisto.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		E1642EB7AA2E6961179F5419 /* libPods-MovieApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE58E1C5BE686352E9C933F8 /* libPods-MovieApp.a */; };
 		F7C73709DADF31A1782B646E /* libPods-MovieApp-MovieAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C27AFC4BD2B450D6CDC157 /* libPods-MovieApp-MovieAppTests.a */; };
@@ -253,7 +252,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69912BC4264C80B400950A90 /* Fontisto.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
