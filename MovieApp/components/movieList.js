@@ -11,7 +11,7 @@ const MovieList = ({ discover, navigation }) => {
         renderItem={({ item }) => {
           return (
             <View>
-              <MovieItem movie={item} navigation={navigation} />
+              <MovieItem movieInfo={item} navigation={navigation} />
             </View>
           );
         }}

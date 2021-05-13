@@ -3,32 +3,31 @@ import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
 import { IMG_URL } from '@env';
 
-const MovieItem = ({ movie, navigation }) => {
+const MovieItem = ({ movieInfo, navigation }) => {
   return (
     <View style={styles.container}>
       <Pressable
         style={styles.contentContainer}
-        onPress={() => navigation.navigate('Info')}>
+        onPress={() => navigation.navigate('Info', { movieInfo: movieInfo })}>
         <Image
           style={styles.image}
-          source={{ uri: `${IMG_URL}${movie.poster_path}` }}
+          source={{ uri: `${IMG_URL}${movieInfo.poster_path}` }}
         />
         <View style={styles.content}>
-          <Text style={styles.title}>{movie.title}</Text>
+          <Text style={styles.title}>{movieInfo.title}</Text>
           <View style={styles.rating}>
             <AirbnbRating
-              defaultRating={movie.vote_average / 2}
+              defaultRating={movieInfo.vote_average / 2}
               size={20}
               isDisabled
               showRating={false}
             />
           </View>
           <Text style={styles.text}>
-            {movie.overview.slice(0, 100) + '...'}
+            {movieInfo.overview.slice(0, 100) + '...'}
           </Text>
         </View>
       </Pressable>
-      {/* <View style={styles.divider} /> */}
     </View>
   );
 };
@@ -68,11 +67,6 @@ const styles = StyleSheet.create({
     maxHeight: '50%',
     maxWidth: '95%',
     overflow: 'hidden',
-  },
-  divider: {
-    width: '80%',
-    borderBottomWidth: 2,
-    borderBottomColor: '#900',
   },
   rating: {
     width: '48%',
