@@ -19,12 +19,12 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'row',
-    height: '28%',
     backgroundColor: '#222222',
     justifyContent: 'space-around',
     alignItems: 'center',
     borderBottomColor: '#900',
     borderBottomWidth: 3,
+    flex: 1,
   },
   input: {
     color: 'white',
