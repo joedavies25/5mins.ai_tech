@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
+import MovieItem from './movieItem';
 
 const MovieList = ({ discover }) => {
-  const data = [{ fruit: 'apple' }, { fruit: 'pear' }, { fruit: 'banana' }];
-
   return (
     <View style={styles.container}>
       <FlatList
@@ -12,7 +11,7 @@ const MovieList = ({ discover }) => {
         renderItem={({ item }) => {
           return (
             <View>
-              <Text style={styles.text}>{item.title}</Text>
+              <MovieItem movie={item} />
             </View>
           );
         }}
@@ -25,13 +24,17 @@ const MovieList = ({ discover }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 8,
+    backgroundColor: '#18191A',
   },
   list: {
     flex: 1,
-    width: '100%',
   },
   text: {
     color: 'white',
+  },
+  image: {
+    height: 20,
+    width: 10,
   },
 });
 
