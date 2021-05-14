@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, SafeAreaView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, StyleSheet, SafeAreaView, StatusBar } from 'react-native';
 import SearchBar from '../components/searchBar';
 import MovieList from '../components/movieList';
 
@@ -366,12 +366,22 @@ const Discover = ({ navigation }) => {
       media_type: 'movie',
     },
   ]);
+  let [search, setSearch] = useState([]);
+
+  useEffect(() => {
+    console.log(search);
+  }, [search]);
 
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.safeAreaContainer}>
-        <SearchBar />
-        <MovieList discover={discover} navigation={navigation} />
+        <StatusBar hidden="true" />
+        <SearchBar setSearch={setSearch} />
+        <MovieList
+          discover={discover}
+          searchResults={search}
+          navigation={navigation}
+        />
       </SafeAreaView>
     </View>
   );

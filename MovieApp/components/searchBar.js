@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Fontisto';
+import { getSearchResults } from '../apiServices';
 
-const SearchBar = () => {
+const SearchBar = ({ setSearch }) => {
+  const onSearch = e => {
+    getSearchResults(setSearch, e);
+  };
+
   return (
     <View style={styles.container}>
       <Icon name="search" size={25} color="white" />
@@ -10,6 +15,7 @@ const SearchBar = () => {
         style={styles.input}
         placeholder="Search Movies..."
         placeholderTextColor="white"
+        onChangeText={onSearch}
       />
     </View>
   );

@@ -1,22 +1,28 @@
 import React from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
 import MovieItem from './movieItem';
 
-const MovieList = ({ discover, navigation }) => {
+const MovieList = ({ discover, searchResults, navigation }) => {
+  const data = searchResults[0] ? searchResults : discover;
+
   return (
     <View style={styles.container}>
-      <FlatList
-        style={styles.list}
-        data={discover}
-        renderItem={({ item }) => {
-          return (
-            <View>
-              <MovieItem movieInfo={item} navigation={navigation} />
-            </View>
-          );
-        }}
-        keyExtractor={(_, idx) => idx}
-      />
+      {searchResults[0] !== 'No Results' ? (
+        <FlatList
+          style={styles.list}
+          data={data}
+          renderItem={({ item }) => {
+            return (
+              <View>
+                <MovieItem movieInfo={item} navigation={navigation} />
+              </View>
+            );
+          }}
+          keyExtractor={(_, idx) => idx}
+        />
+      ) : (
+        <Text style={styles.noResults}>No Results</Text>
+      )}
     </View>
   );
 };
@@ -35,6 +41,12 @@ const styles = StyleSheet.create({
   image: {
     height: 20,
     width: 10,
+  },
+  noResults: {
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 30,
+    padding: '15%',
   },
 });
 
