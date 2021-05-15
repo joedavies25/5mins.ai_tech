@@ -1,17 +1,16 @@
-import 'react-native-gesture-handler';
+// import 'react-native-gesture-handler';
 import React from 'react';
-import { View, Text, SafeAreaView, StyleSheet, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import Discover from './screens/discover';
-import Info from './screens/info';
 import { createStackNavigator } from '@react-navigation/stack';
-// import { getDiscover } from './apiServices';
+import Discover from './screens/Discover';
+import Info from './screens/Info';
+// import { getTrendingResults } from './apiServices';
 
 const Stack = createStackNavigator();
 
 const App = () => {
   // useEffect(() => {
-  //   getDiscover(setDiscover);
+  //   getTrendingResults(setDiscover);
   // }, []);
 
   return (

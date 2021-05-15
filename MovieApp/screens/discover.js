@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, SafeAreaView, StatusBar } from 'react-native';
-import SearchBar from '../components/searchBar';
-import MovieList from '../components/movieList';
+import SearchBar from '../components/SearchBar';
+import MovieList from '../components/MovieList';
 
 const Discover = ({ navigation }) => {
-  let [discover, setDiscover] = useState([
+  let [trending, setTrending] = useState([
     {
       video: false,
       vote_average: 7.7,
@@ -378,7 +378,7 @@ const Discover = ({ navigation }) => {
         <StatusBar hidden="true" />
         <SearchBar setSearch={setSearch} />
         <MovieList
-          discover={discover}
+          trending={trending}
           searchResults={search}
           navigation={navigation}
         />

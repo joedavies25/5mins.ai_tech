@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-import MovieItem from './movieItem';
+import MovieItem from './MovieItem';
 
-const MovieList = ({ discover, searchResults, navigation }) => {
-  const data = searchResults[0] ? searchResults : discover;
+const MovieList = ({ trending, searchResults, navigation }) => {
+  const data = searchResults[0] ? searchResults : trending;
 
   return (
     <View style={styles.container}>
