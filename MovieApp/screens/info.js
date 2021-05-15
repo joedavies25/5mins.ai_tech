@@ -6,14 +6,12 @@ import { IMG_URL } from '@env';
 
 const Info = ({ route }) => {
   const { movieInfo } = route.params;
+  const posterUrl = `${IMG_URL}${movieInfo.poster_path}`;
 
   return (
     <View style={styles.container}>
       <View style={styles.top}>
-        <Image
-          style={styles.image}
-          source={{ uri: `${IMG_URL}${movieInfo.poster_path}` }}
-        />
+        <Image style={styles.image} source={{ uri: posterUrl }} />
         <View style={styles.topContent}>
           <Text style={styles.title}>{movieInfo.title}</Text>
           <Text style={styles.text}>Released: {movieInfo.release_date}</Text>

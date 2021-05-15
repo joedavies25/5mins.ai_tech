@@ -2,17 +2,12 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Discover from './screens/Discover';
-import Info from './screens/Info';
-// import { getTrendingResults } from './apiServices';
+import Discover from './screens/discover';
+import Info from './screens/info';
 
 const Stack = createStackNavigator();
 
 const App = () => {
-  // useEffect(() => {
-  //   getTrendingResults(setDiscover);
-  // }, []);
-
   return (
     <NavigationContainer>
       <Stack.Navigator>

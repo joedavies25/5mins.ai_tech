@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-import MovieItem from './MovieItem';
+import MovieItem from './movieItem';
 
 const MovieList = ({ trending, searchResults, navigation }) => {
   const data = searchResults[0] ? searchResults : trending;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, SafeAreaView, StatusBar } from 'react-native';
 import { getTrendingResults } from '../apiServices';
-import SearchBar from '../components/SearchBar';
-import MovieList from '../components/MovieList';
+import SearchBar from '../components/searchBar';
+import MovieList from '../components/movieList';
 
 const Discover = ({ navigation }) => {
   let [trending, setTrending] = useState([]);

@@ -4,6 +4,8 @@ import { AirbnbRating } from 'react-native-ratings';
 import { IMG_URL } from '@env';
 
 const MovieItem = ({ movieInfo, navigation }) => {
+  const posterUrl = `${IMG_URL}${movieInfo.poster_path}`;
+
   return (
     <View style={styles.container}>
       <Pressable
@@ -12,7 +14,7 @@ const MovieItem = ({ movieInfo, navigation }) => {
         testID="movieItem">
         <Image
           style={styles.image}
-          source={{ uri: `${IMG_URL}${movieInfo.poster_path}` }}
+          source={{ uri: posterUrl }}
           testID="poster"
         />
         <View style={styles.content}>
