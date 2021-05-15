@@ -1,11 +1,24 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Fontisto';
 import { getSearchResults } from '../apiServices';
 
 const SearchBar = ({ setSearch }) => {
-  const onSearch = e => {
-    getSearchResults(setSearch, e);
+  // debounce searchbar to limit API hits
+  const debounce = (func, timeout) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, timeout);
+    };
+  };
+
+  const processChange = debounce(getSearchResults, 500);
+
+  const onSearch = async e => {
+    processChange(setSearch, e);
   };
 
   return (
@@ -16,6 +29,7 @@ const SearchBar = ({ setSearch }) => {
         placeholder="Search Movies..."
         placeholderTextColor="white"
         onChangeText={onSearch}
+        testID="search"
       />
     </View>
   );

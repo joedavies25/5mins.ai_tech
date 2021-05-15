@@ -13,12 +13,16 @@ const MovieList = ({ trending, searchResults, navigation }) => {
           data={data}
           renderItem={({ item }) => {
             return (
-              <View>
-                <MovieItem movieInfo={item} navigation={navigation} />
+              <View testID="MovieItem">
+                <MovieItem
+                  movieInfo={item}
+                  navigation={navigation}
+                  testID="MovieItem"
+                />
               </View>
             );
           }}
-          keyExtractor={(_, idx) => idx}
+          keyExtractor={movie => movie.id}
         />
       ) : (
         <Text style={styles.noResults}>No Results</Text>

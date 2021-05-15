@@ -26,7 +26,9 @@ const Info = ({ route }) => {
       </View>
       <Text style={styles.text}>{movieInfo.overview}</Text>
       <AirbnbRating defaultRating={movieInfo.vote_average / 2} size={24} />
-      <Text style={styles.rating}>Rating: {movieInfo.vote_average}</Text>
+      <Text style={styles.rating}>
+        Rating: {movieInfo.vote_average / 2} / 5
+      </Text>
     </View>
   );
 };

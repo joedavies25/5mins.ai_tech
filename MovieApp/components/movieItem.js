@@ -8,10 +8,12 @@ const MovieItem = ({ movieInfo, navigation }) => {
     <View style={styles.container}>
       <Pressable
         style={styles.contentContainer}
-        onPress={() => navigation.navigate('Info', { movieInfo: movieInfo })}>
+        onPress={() => navigation.navigate('Info', { movieInfo: movieInfo })}
+        testID="movieItem">
         <Image
           style={styles.image}
           source={{ uri: `${IMG_URL}${movieInfo.poster_path}` }}
+          testID="poster"
         />
         <View style={styles.content}>
           <Text style={styles.title}>{movieInfo.title}</Text>
