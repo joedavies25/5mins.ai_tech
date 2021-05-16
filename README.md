@@ -1,3 +1,3 @@
 # 5mins.ai Movies
 
-<p align='center'><img width='50%' src='./readmeFiles/page1.png'><img width='50%' src='./readmeFiles/page2.png'></p>
+<p><img width='30%' alt='App Screenshot' src='./readmeFiles/page1.png' margin='5%'><img width='30%' src='./readmeFiles/page2.png'></p>
