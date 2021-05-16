@@ -22,8 +22,12 @@ const Info = ({ route }) => {
           </View>
         </View>
       </View>
-      <Text style={styles.text}>{movieInfo.overview}</Text>
-      <AirbnbRating defaultRating={movieInfo.vote_average / 2} size={24} />
+      <Text style={styles.overview}>{movieInfo.overview}</Text>
+      <AirbnbRating
+        defaultRating={movieInfo.vote_average / 2}
+        size={24}
+        showRating={false}
+      />
       <Text style={styles.rating}>
         Rating: {movieInfo.vote_average / 2} / 5
       </Text>
@@ -49,6 +53,12 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 17,
     paddingTop: 10,
+  },
+  overview: {
+    color: 'white',
+    fontSize: 17,
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   title: {
     fontWeight: 'bold',
