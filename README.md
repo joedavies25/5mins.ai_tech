@@ -17,3 +17,5 @@ IMG_URL=https://image.tmdb.org/t/p/w300
 ```
 6. Finally build and run the app: `yarn ios` <br />
 Sit Back and grab a coffee ☕️ This is going to take a while!
+## Testing
+To run tests on this app: `yarn test`
